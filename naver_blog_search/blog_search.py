@@ -1,9 +1,9 @@
+#!python
+# -*- coding: UTF-8 -*-
+
 """
 	네이버 검색 api를 이용해서 블로그 검색 결과 중 필요한 데이터 excel에 저장 
 """
-
-#!python
-# -*- coding: UTF-8 -*-
 
 import cgi
 import cgitb
@@ -85,12 +85,12 @@ def create_excel(text):
 		else:
 				print("Error Code:" + rescode)
 
-		now = datetime.now()
-		day = now.strftime('%Y%m%d')
-		time = now.strftime('%H%M%S')
+	now = datetime.now()
+	day = now.strftime('%Y%m%d')
+	time = now.strftime('%H%M%S')
 	
-		df = pd.DataFrame(data, columns=['blog', 'id', 'email'])
-		df.to_excel('D:/'+text+'_'+day+'_'+time+'.xlsx',index=False)    	
+	df = pd.DataFrame(data, columns=['blog', 'id', 'email'])
+	df.to_excel('D:/'+text+'_'+day+'_'+time+'.xlsx',index=False)    	
     	
 if __name__ == "__main__":
     main()
